@@ -1,0 +1,39 @@
+total = 0
+inputs = []
+
+while True:
+    user_input = input("Enter a number (or 'Stop' to quit): ")
+    
+    if user_input.lower() == "stop":
+        print("\nYou typed 'stop'. The program has ended!")
+        break
+    
+    try:
+        number = int(user_input)
+        inputs.append(number)
+        
+        if number == 0:
+            total = 0
+            print("\nYou entered 0. The total has been reset to 0")
+            
+        elif number % 2 == 0:
+            total += number
+            print(f"{number} is Even! -Added (Total Input: {total})")
+        
+        else:
+            total -= number
+            print(f"{number} is Odd! -Subtract (Total Input: {total})")
+            
+    except:
+        print()
+        
+print("\nTotal Summary:")        
+for sumary in inputs:
+    if sumary == 0:
+        print(f"{sumary} reset the total!")
+    elif sumary % 2 == 0:
+        print(f"{sumary} Even was added!")
+    else:
+        print(f"{sumary} Odd was added!")
+        
+print("\nFinal Total: " + str(total))
