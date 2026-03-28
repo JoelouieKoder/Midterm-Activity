@@ -1,0 +1,18 @@
+my_list = []
+
+for i in range(1, 10):
+    my_list.append(i)
+    
+print("Original List:", my_list)
+print("Length of list:", len(my_list))
+    
+x = 0
+while x < len(my_list):
+    item = my_list[x]
+    if my_list.count(my_list[x]) > 1:
+        del my_list[x]
+    else:
+        x += 1
+        
+print("\nThe list with unique elements only.")
+print(my_list)
